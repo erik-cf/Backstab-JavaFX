@@ -3,6 +3,9 @@ package com.mpec.screen.login;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.mpec.entities.BaseStage;
+import com.mpec.entities.User;
+import com.mpec.main.Constants;
 import com.mpec.mongo.manager.GetTools;
 
 import javafx.application.Platform;
@@ -16,6 +19,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
 
 public class LoginScreenController implements Initializable {
 
@@ -47,11 +51,25 @@ public class LoginScreenController implements Initializable {
 	 * Método que setea los Listeners a los controles de la escena.
 	 */
 	private void addListeners() {
+		// Debemos hacer el RunLater, ya que si no, nos dará un NullPointerException ya que aún puede que no se hayan inicializado los controles de la ventana
 		Platform.runLater(() -> {
 			// Action Listener del botón
 			loginButton.setOnAction(event -> {
-				if(GetTools.validateLogin(userTextField.getText(), passPasswordField.getText())) {
-					new Alert(AlertType.ERROR, "OK", ButtonType.CLOSE).showAndWait();
+				
+				User enteredUser = GetTools.validateLogin(userTextField.getText(), passPasswordField.getText());
+				if(enteredUser != null) {
+					
+					if(enteredUser.getRole() != 1) {
+						new Alert(AlertType.ERROR, "You don't have permission to use this application!", ButtonType.CLOSE).showAndWait();
+						return;
+					}
+					// Creamos el Base Stage
+					BaseStage baseStage = new BaseStage(enteredUser);
+					// Lo mostramos
+					baseStage.show();
+					
+					// Cerramos esta ventana
+					((Stage)loginButton.getScene().getWindow()).close();
 				}else {
 					new Alert(AlertType.ERROR, "Invalid username or password!", ButtonType.CLOSE).showAndWait();
 				}

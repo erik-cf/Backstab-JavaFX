@@ -3,10 +3,10 @@ package com.mpec.screen.login;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.mpec.entities.BaseStage;
+import com.mpec.encription.HashTools;
 import com.mpec.entities.User;
-import com.mpec.main.Constants;
 import com.mpec.mongo.manager.GetTools;
+import com.mpec.ui.custom.BaseStage;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -56,7 +56,7 @@ public class LoginScreenController implements Initializable {
 			// Action Listener del botón
 			loginButton.setOnAction(event -> {
 				
-				User enteredUser = GetTools.validateLogin(userTextField.getText(), passPasswordField.getText());
+				User enteredUser = GetTools.validateLogin(userTextField.getText(), HashTools.stringToMD5(passPasswordField.getText()));
 				if(enteredUser != null) {
 					
 					if(enteredUser.getRole() != 1) {

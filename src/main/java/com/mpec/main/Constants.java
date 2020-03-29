@@ -2,8 +2,8 @@ package com.mpec.main;
 
 import java.awt.Toolkit;
 
-import com.mpec.entities.BaseStage;
 import com.mpec.entities.User;
+import com.mpec.ui.custom.BaseStage;
 
 public final class Constants {
 	////////////////////////////////////////// UI //////////////////////////////////////////

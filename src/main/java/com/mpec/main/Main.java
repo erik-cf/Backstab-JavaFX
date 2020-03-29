@@ -32,7 +32,7 @@ public class Main extends Application {
 		}).start();
 
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("../fxml/login/login_fxml.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/fxml/login/login_fxml.fxml"));
 			Scene scene = new Scene(root, 600, 400);
 			primaryStage.setScene(scene);
 			primaryStage.show();

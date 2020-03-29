@@ -1,8 +1,9 @@
 package com.mpec.main;
 
-import java.awt.Toolkit;
 import java.net.URL;
 import java.net.URLConnection;
+
+import com.mpec.mongo.connection.MongoConnection;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,21 +18,22 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		if(!checkInternetConnection()) {
+		if (!checkInternetConnection()) {
 			Alert a = new Alert(AlertType.ERROR,
 					"Your network is not available, you should check your network availability!", ButtonType.CLOSE);
 			a.setTitle("Network unavailable!");
-			
+
 			a.showAndWait();
-			
+
 			System.exit(0);
-		}	
-		
+		}
+		new Thread(() -> {
+			MongoConnection.initialize();
+		}).start();
+
 		try {
-			int width = (int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 1.5);
-			int height = (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 1.5);
 			Parent root = FXMLLoader.load(getClass().getResource("../fxml/login/login_fxml.fxml"));
-			Scene scene = new Scene(root, width, height);
+			Scene scene = new Scene(root, 600, 400);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {
@@ -40,7 +42,7 @@ public class Main extends Application {
 	}
 
 	public static void main(String[] args) {
-		launch(args);	
+		launch(args);
 	}
 
 	private static boolean checkInternetConnection() {

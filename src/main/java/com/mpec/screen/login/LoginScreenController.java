@@ -3,10 +3,15 @@ package com.mpec.screen.login;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.mpec.mongo.manager.GetTools;
+
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -44,16 +49,22 @@ public class LoginScreenController implements Initializable {
 	private void addListeners() {
 		Platform.runLater(() -> {
 			// Action Listener del botón
-			loginButton.setOnAction(e -> {
-				System.out.println("AAAAAAHHHHH!!!");
+			loginButton.setOnAction(event -> {
+				if(GetTools.validateLogin(userTextField.getText(), passPasswordField.getText())) {
+					new Alert(AlertType.ERROR, "OK", ButtonType.CLOSE).showAndWait();
+				}else {
+					new Alert(AlertType.ERROR, "Invalid username or password!", ButtonType.CLOSE).showAndWait();
+				}
 			});
 
 			// Key Listener del panel principal de la escena.
-			mainPane.setOnKeyPressed(e -> {
+			mainPane.setOnKeyPressed(event -> {
 				// Si se pulsa el Enter
-				if (e.getCode().equals(KeyCode.ENTER))
-					// Activamos acción del botón Login.
+				if (event.getCode().equals(KeyCode.ENTER))
+					// Activamos acción del botón Login, armándolo para dar el efecto visual.
+					loginButton.arm();
 					loginButton.fire();
+					loginButton.disarm();
 			});
 		});
 	}

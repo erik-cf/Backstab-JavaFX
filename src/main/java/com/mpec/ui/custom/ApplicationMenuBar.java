@@ -7,26 +7,31 @@ import javafx.scene.layout.BorderPane;
 
 public class ApplicationMenuBar extends MenuBar {
 
-	private Menu app;
+	private Menu docs;
 	private Menu view;
 	private MenuItem viewConfig;
+	private MenuItem newDocs;
+	private MenuItem searchDocs;
 	
 	public ApplicationMenuBar(BorderPane root) {
 		super();
-		app = new Menu("Application");
+		docs = new Menu("Documents");
 		view = new Menu("View");
 		viewConfig = new MenuItem("Configuration");
+		newDocs = new MenuItem("New...");
+		searchDocs = new MenuItem("Search...");
 		view.getItems().add(viewConfig);
-		this.getMenus().addAll(app, view);
+		docs.getItems().addAll(newDocs, searchDocs);
+		this.getMenus().addAll(docs, view);
 		this.setWidth(root.getWidth());
 	}
 
 	public Menu getApp() {
-		return app;
+		return docs;
 	}
 
 	public void setApp(Menu app) {
-		this.app = app;
+		this.docs = app;
 	}
 
 	public Menu getView() {

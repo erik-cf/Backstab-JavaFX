@@ -1,5 +1,6 @@
 package com.mpec.ui.tools;
 
+import com.mpec.entities.DropsData;
 import com.mpec.entities.GameCharacter;
 
 import javafx.scene.control.TableColumn;
@@ -36,6 +37,25 @@ public class TableTools {
 		characterRange.setCellValueFactory(new PropertyValueFactory<T, Double>("range"));
 		
 		table.getColumns().setAll(characterName, characterAttack, characterDefense, characterHp, characterMovementSpeed, characterAttackSpeed, characterRange);
+	}
+	
+	public static void addDropsDataColumns(TableView<DropsData> table) {
+		TableColumn<DropsData, String> dropsName = new TableColumn<DropsData, String>("Char Name");
+		dropsName.setCellValueFactory(new PropertyValueFactory<DropsData, String>("name"));
+		
+		TableColumn<DropsData, Integer> dropsValue = new TableColumn<DropsData, Integer>("Value");
+		dropsValue.setCellValueFactory(new PropertyValueFactory<DropsData, Integer>("value"));
+		
+		TableColumn<DropsData, Integer> dropsDuration = new TableColumn<DropsData, Integer>("Duration (Seconds)");
+		dropsDuration.setCellValueFactory(new PropertyValueFactory<DropsData, Integer>("duration"));
+		
+		TableColumn<DropsData, Integer> dropsMinRange = new TableColumn<DropsData, Integer>("Min Random Range");
+		dropsMinRange.setCellValueFactory(new PropertyValueFactory<DropsData, Integer>("min_range"));
+		
+		TableColumn<DropsData, Integer> dropsMaxRange = new TableColumn<DropsData, Integer>("Max Random Range");
+		dropsMaxRange.setCellValueFactory(new PropertyValueFactory<DropsData, Integer>("max_range"));
+		
+		table.getColumns().setAll(dropsName, dropsValue, dropsDuration, dropsMinRange, dropsMaxRange);
 	}
 
 }

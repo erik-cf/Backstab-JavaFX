@@ -78,7 +78,11 @@ public class NavBar implements Initializable {
 		});
 		mapEditor.setOnMouseClicked(event -> {
 			Constants.selectedLabel = mapEditor;
-			// TODO add MapEditor scene
+			try {
+				stage.changeContentScene(FXMLLoader.load(getClass().getResource("../../fxml/app/MapEditor.fxml")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
 		
 		dropsDataEditor.setOnMouseEntered(event -> {
@@ -86,7 +90,11 @@ public class NavBar implements Initializable {
 		});
 		dropsDataEditor.setOnMouseClicked(event -> {
 			Constants.selectedLabel = dropsDataEditor;
-			//TODO add DropsDataEditor scene
+			try {
+				stage.changeContentScene(FXMLLoader.load(getClass().getResource("../../fxml/app/DropsDataEditor.fxml")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
 		
 		gameStatistics.setOnMouseEntered(event -> {

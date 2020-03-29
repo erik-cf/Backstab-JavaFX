@@ -78,11 +78,12 @@ public class LoginScreenController implements Initializable {
 			// Key Listener del panel principal de la escena.
 			mainPane.setOnKeyPressed(event -> {
 				// Si se pulsa el Enter
-				if (event.getCode().equals(KeyCode.ENTER))
+				if (event.getCode().equals(KeyCode.ENTER)) {
 					// Activamos acción del botón Login, armándolo para dar el efecto visual.
 					loginButton.arm();
 					loginButton.fire();
 					loginButton.disarm();
+				}
 			});
 		});
 	}

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+
+<HBox fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mpec.ui.screen.content.MapEditor">
+   <children>
+      <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="573.0" spacing="20.0">
+         <children>
+            <Label text="Phase Time">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label text="Min Drop Time">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label text="Max Drop Time">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label text="Base Monsters Count">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label text="Collision Probability">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets right="20.0" top="5.0" />
+         </padding>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" fillWidth="false" prefHeight="200.0" prefWidth="573.0" spacing="25.0">
+         <children>
+            <TextField fx:id="phaseTextField">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="minDropTextField">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="maxDropTextField">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="baseMonstersTextField">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="collisionProbabilityTextField">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="applyButton" mnemonicParsing="false" prefHeight="40.0" prefWidth="100.0" text="Apply" />
+         </children>
+         <padding>
+            <Insets left="20.0" top="73.0" />
+         </padding>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </VBox>
+   </children>
+</HBox>

@@ -10,6 +10,7 @@ import org.bson.conversions.Bson;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
+import com.mpec.entities.DropsData;
 import com.mpec.entities.Enemy;
 import com.mpec.entities.GameCharacter;
 import com.mpec.entities.Playable;
@@ -53,6 +54,20 @@ public class GetTools extends MongoConnection {
 		return FXCollections.observableArrayList(data);
 	}
 	
+	public static Document getFirstDocumentAlone(String collection) {
+		return getMongoCollection(collection).find().first();
+	}
 	
+	public static ObservableList<DropsData> getDropsData(){
+		ArrayList<DropsData> data = new ArrayList<DropsData>();
+		FindIterable<Document> usersIterable = getMongoCollection(Constants.DROPS_DATA).find();
+		Iterator<Document> i = usersIterable.iterator();
+		Document doc;
+		while(i.hasNext()) {
+			doc = i.next();
+			data.add(new DropsData(doc.getString("name"), doc.getInteger("value"), doc.getInteger("duration"), doc.getInteger("min_range"), doc.getInteger("max_range")));
+		}
+		return FXCollections.observableArrayList(data);
+	}
 
 }

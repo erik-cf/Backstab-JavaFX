@@ -35,7 +35,7 @@ public class BaseStage extends Stage {
 		}
 		Parent content = null;
 		try {
-			content = FXMLLoader.load(getClass().getResource("../fxml/app/EnemyEditor.fxml"));
+			content = FXMLLoader.load(getClass().getResource("../fxml/app/CharacterEditor.fxml"));
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
@@ -51,6 +51,10 @@ public class BaseStage extends Stage {
 	
 	public VBox getSideBar() {
 		return sideBar;
+	}
+	
+	public Parent getContentPane() {
+		return (Parent)appBorderPane.getCenter();
 	}
 	
 }

@@ -1,9 +1,9 @@
 package com.mpec.main;
 
-import java.awt.Toolkit;
-
 import com.mpec.entities.User;
 import com.mpec.ui.custom.BaseStage;
+
+import javafx.scene.control.Label;
 
 public final class Constants {
 	////////////////////////////////////////// UI //////////////////////////////////////////
@@ -12,12 +12,13 @@ public final class Constants {
 	 */
 	public static User loggedUser;
 	public static BaseStage baseStage;
+	public static Label selectedLabel;
 	
 	/**
 	 * Tamaño de la ventana, partiendo de la resolución de pantalla.
 	 */
-	public static final int WINDOW_BASE_WIDTH = (int) (Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 1.5);
-	public static final int WINDOW_BASE_HEIGHT = (int) (Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 1.5);
+	public static final int WINDOW_BASE_WIDTH = 1366;
+	public static final int WINDOW_BASE_HEIGHT = 768;
 	
 
 	////////////////////////////////////////// MONGO //////////////////////////////////////////

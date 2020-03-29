@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox spacing="5.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<VBox prefWidth="220.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mpec.ui.screen.navigation.NavBar">
    <children>
       <Label text="EDIT STATS" underline="true">
          <font>
@@ -18,7 +17,7 @@
             <Insets top="5.0" />
          </VBox.margin>
       </Label>
-      <Label prefHeight="27.0" prefWidth="170.0" text="Character">
+      <Label fx:id="playableEditor" prefHeight="27.0" prefWidth="170.0" text="Character">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
@@ -26,7 +25,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label prefWidth="170.0" text="Enemy">
+      <Label fx:id="enemyEditor" prefWidth="170.0" text="Enemy">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
@@ -34,7 +33,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label prefWidth="170.0" text="Map">
+      <Label fx:id="mapEditor" prefWidth="170.0" text="Map">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
@@ -42,7 +41,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label prefWidth="170.0" text="Drops Data">
+      <Label fx:id="dropsDataEditor" prefWidth="170.0" text="Drops Data">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
@@ -58,7 +57,7 @@
             <Insets bottom="5.0" top="5.0" />
          </VBox.margin>
       </Label>
-      <Label prefWidth="170.0" text="Game Statistics">
+      <Label fx:id="gameStatistics" prefWidth="170.0" text="Game Statistics">
          <VBox.margin>
             <Insets left="10.0" />
          </VBox.margin>
@@ -71,7 +70,7 @@
             <Font name="System Bold" size="34.0" />
          </font>
       </Label>
-      <Label prefWidth="170.0" text="Search User">
+      <Label fx:id="userSearch" prefWidth="170.0" text="Search User">
          <font>
             <Font size="18.0" />
          </font>
@@ -79,7 +78,7 @@
             <Insets left="10.0" />
          </VBox.margin>
       </Label>
-      <Label prefWidth="170.0" text="New User">
+      <Label fx:id="newUser" prefWidth="170.0" text="New User">
          <font>
             <Font size="18.0" />
          </font>

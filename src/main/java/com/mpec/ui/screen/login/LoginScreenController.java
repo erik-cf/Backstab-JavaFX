@@ -1,4 +1,4 @@
-package com.mpec.screen.login;
+package com.mpec.ui.screen.login;
 
 import java.net.URL;
 import java.util.ResourceBundle;

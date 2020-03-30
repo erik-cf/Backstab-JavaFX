@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 import org.bson.Document;
 
 import com.mpec.main.Constants;
+import com.mpec.main.Strings;
 import com.mpec.mongo.manager.GetTools;
 import com.mpec.ui.custom.BaseStage;
 
@@ -13,11 +14,27 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.HBox;
 
 public class MapEditor implements Initializable {
+	
+	@FXML
+	Label phaseLabel;
+	
+	@FXML
+	Label minDropLabel;
+	
+	@FXML
+	Label maxDropLabel;
+	
+	@FXML
+	Label baseMonstersLabel;
+	
+	@FXML
+	Label collisionLabel;
 
 	@FXML
 	TextField phaseTextField;
@@ -42,8 +59,9 @@ public class MapEditor implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-			addListeners();
-			fillTextFields();
+		setStrings();	
+		addListeners();
+		fillTextFields();
 	}
 	
 	public void addListeners() {
@@ -71,5 +89,14 @@ public class MapEditor implements Initializable {
 		maxDropTextField.setText(String.valueOf(doc.getInteger("max_drop_time")));
 		baseMonstersTextField.setText(String.valueOf(doc.getInteger("base_monsters_count")));
 		collisionProbabilityTextField.setText(String.valueOf(doc.getInteger("collision_probability")));
+	}
+	
+	private void setStrings() {
+		phaseLabel.setText(Strings.PHASETIME);
+		minDropLabel.setText(Strings.MINDROPTIME);
+		maxDropLabel.setText(Strings.MAXDROPTIME);
+		baseMonstersLabel.setText(Strings.MONSTERSCOUNT);
+		collisionLabel.setText(Strings.COLLISIONPROB);
+		applyButton.setText(Strings.APPLYBUTTON);
 	}
 }

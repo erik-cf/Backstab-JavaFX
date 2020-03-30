@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.mpec.main.Constants;
+import com.mpec.main.Strings;
 import com.mpec.ui.custom.BaseStage;
 
 import javafx.application.Platform;
@@ -15,6 +16,9 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Label;
 
 public class NavBar implements Initializable {
+	
+	@FXML
+	Label editStats;
 	
 	@FXML
 	Label playableEditor;
@@ -29,7 +33,13 @@ public class NavBar implements Initializable {
 	Label dropsDataEditor;
 	
 	@FXML
+	Label gameInfo;
+	
+	@FXML
 	Label gameStatistics;
+	
+	@FXML
+	Label users;
 	
 	@FXML
 	Label userSearch;
@@ -43,6 +53,7 @@ public class NavBar implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		Platform.runLater(() -> {
 			Constants.selectedLabel = playableEditor;
+			setStrings();
 			stage = (BaseStage)newUser.getScene().getWindow();
 			addListeners();	
 		});
@@ -120,6 +131,19 @@ public class NavBar implements Initializable {
 			Constants.selectedLabel = newUser;
 			// TODO add new User scene
 		});
+	}
+	
+	private void setStrings() {
+		editStats.setText(Strings.EDITSTATSNAV);
+		playableEditor.setText(Strings.CHARACTERNAV);
+		enemyEditor.setText(Strings.ENEMYNAV);
+		mapEditor.setText(Strings.MAPNAV);
+		dropsDataEditor.setText(Strings.DROPSDATANAV);
+		gameInfo.setText(Strings.GAMEINFONAV);
+		gameStatistics.setText(Strings.GAMESTATISTICSNAV);
+		users.setText(Strings.USERSNAV);
+		userSearch.setText(Strings.SEARCHUSERNAV);
+		newUser.setText(Strings.NEWUSERNAV);
 	}
 
 }

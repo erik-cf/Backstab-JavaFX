@@ -18,10 +18,11 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
+		
 		if (!checkInternetConnection()) {
 			Alert a = new Alert(AlertType.ERROR,
-					"Your network is not available, you should check your network availability!", ButtonType.CLOSE);
-			a.setTitle("Network unavailable!");
+					Strings.NONETWORKALERT, ButtonType.CLOSE);
+			a.setTitle(Strings.NONETWORKTITLE);
 
 			a.showAndWait();
 

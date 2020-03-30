@@ -7,32 +7,31 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-
 <HBox fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="708.0" prefWidth="1146.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mpec.ui.screen.content.MapEditor">
    <children>
       <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="573.0" spacing="20.0">
          <children>
-            <Label text="Phase Time">
+            <Label fx:id="phaseLabel" text="Phase Time">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label text="Min Drop Time">
+            <Label fx:id="minDropLabel" text="Min Drop Time">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label text="Max Drop Time">
+            <Label fx:id="maxDropLabel" text="Max Drop Time">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label text="Base Monsters Count">
+            <Label fx:id="baseMonstersLabel" text="Base Monsters Count">
                <font>
                   <Font size="30.0" />
                </font>
             </Label>
-            <Label text="Collision Probability">
+            <Label fx:id="collisionLabel" text="Collision Probability">
                <font>
                   <Font size="30.0" />
                </font>

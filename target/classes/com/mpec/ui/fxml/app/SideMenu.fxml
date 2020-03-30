@@ -9,7 +9,7 @@
 
 <VBox prefWidth="220.0" spacing="5.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mpec.ui.screen.navigation.NavBar">
    <children>
-      <Label text="EDIT STATS" underline="true">
+      <Label fx:id="editStats" text="EDIT STATS" underline="true">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
@@ -49,7 +49,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label text="GAME INFO" underline="true">
+      <Label fx:id="gameInfo" text="GAME INFO" underline="true">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>
@@ -65,7 +65,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label text="USERS" underline="true">
+      <Label fx:id="users" text="USERS" underline="true">
          <font>
             <Font name="System Bold" size="34.0" />
          </font>

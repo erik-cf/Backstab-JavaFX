@@ -38,5 +38,12 @@ public final class Constants {
 	public static final String PLAYER_STATISTICS = "PlayerStatistics";
 	public static final String USER = "User";
 
-	public static final String MONGO_DATABASE = "Backstab";	
+	/**
+	 * Nombre de la BD
+	 */
+	public static final String MONGO_DATABASE = "Backstab";
+	
+	////////////////////////////////////////// APP Config //////////////////////////////////////////
+	public static String language = "spanish";
+	public static String mode = "light";
 }

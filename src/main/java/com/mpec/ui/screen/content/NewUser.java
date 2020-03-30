@@ -98,6 +98,8 @@ public class NewUser implements Initializable {
 			}
 			User user = new User(nameTextField.getText(), surnameTextField.getText(), mailTextField.getText(), usernameTextField.getText(), HashTools.stringToMD5(passwordPasswordField.getText()), role);
 			PostTools.postUser(user);
+			new Alert(AlertType.CONFIRMATION, Strings.NEWUSERADDED, ButtonType.OK).show();
+			clearFields();
 		});
 	}
 
@@ -117,5 +119,14 @@ public class NewUser implements Initializable {
 		mailLabel.setText(Strings.MAILLABEL);
 		roleLabel.setText(Strings.ROLELABEL);
 		sendButton.setText(Strings.SENDBUTTON);
+	}
+	
+	private void clearFields() {
+		nameTextField.setText("");
+		surnameTextField.setText("");
+		usernameTextField.setText("");
+		passwordPasswordField.setText("");
+		mailTextField.setText("");
+		roleChoiceBox.getSelectionModel().clearSelection();
 	}
 }

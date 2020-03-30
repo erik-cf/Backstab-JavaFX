@@ -12,6 +12,7 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Filters;
 import com.mpec.encription.AsymmetricTools;
+import com.mpec.encription.HashTools;
 import com.mpec.entities.DropsData;
 import com.mpec.entities.Enemy;
 import com.mpec.entities.GameCharacter;
@@ -34,7 +35,7 @@ public class GetTools extends MongoConnection {
 	public static User validateLogin(String username, String password) {
 		ArrayList<Bson> filters = new ArrayList<Bson>();
 		filters.add(Filters.eq("username", username));
-		filters.add(Filters.eq("password", password));
+		filters.add(Filters.eq("password", HashTools.stringToMD5(password)));
 		MongoCollection<Document> userCol = getMongoCollection(Constants.USER);
 		FindIterable<Document> usersIterable = userCol.find(Filters.and(filters));
 		Document doc = usersIterable.first();

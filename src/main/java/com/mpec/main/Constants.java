@@ -1,6 +1,7 @@
 package com.mpec.main;
 
 import java.io.IOException;
+import java.util.Properties;
 
 import com.mpec.config.ConfigTools;
 import com.mpec.entities.User;
@@ -47,6 +48,9 @@ public final class Constants {
 	public static final String MONGO_DATABASE = "Backstab";
 	
 	////////////////////////////////////////// APP Config //////////////////////////////////////////
+	public static final Properties props = new Properties();
+	
+	
 	public static String language = getLanguage();
 	public static String mode = "light";
 	
@@ -57,5 +61,15 @@ public final class Constants {
 			e.printStackTrace();
 		}
 		return "english";
+	}
+	
+	public static void initializeProperties() {
+			try {
+				props.getProperty(ConfigTools.readConfig(ConfigTools.LANGUAGE));
+				props.getProperty(ConfigTools.readConfig(ConfigTools.MODE));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 }

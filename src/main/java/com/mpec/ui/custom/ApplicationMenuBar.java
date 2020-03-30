@@ -37,12 +37,17 @@ public class ApplicationMenuBar extends MenuBar {
 	 */
 	private BorderPane root;
 	
+	private BaseStage mainStage;
+	
 	public ApplicationMenuBar(BorderPane root) {
 		super();
 		this.root = root;
+
 		initialize();
+		
 		setListeners();
 		this.setWidth(this.root.getWidth());
+		
 	}
 	
 	private void initialize() {
@@ -80,7 +85,7 @@ public class ApplicationMenuBar extends MenuBar {
 			Scene scene = new Scene(loginParent, 600, 400);
 			Stage loginStage = new Stage();
 			loginStage.setScene(scene);
-			((BaseStage)root.getScene().getWindow()).close();
+			((BaseStage)this.root.getScene().getWindow()).close();
 			loginStage.show();
 		});
 		
@@ -90,9 +95,16 @@ public class ApplicationMenuBar extends MenuBar {
 		});
 		
 		languageConfig.setOnAction(event -> {
-			SelectLanguageStage selectLanguage = new SelectLanguageStage(((BaseStage)root.getScene().getWindow()));
+			SelectLanguageStage selectLanguage = new SelectLanguageStage(((BaseStage)this.root.getScene().getWindow()));
 			selectLanguage.show();
 		});
+		
+		viewConfig.setOnAction(event -> {
+			ConfigurationStage confStage = new ConfigurationStage(((BaseStage)this.root.getScene().getWindow()));
+			confStage.show();
+		});
+		
+		
 	}
 
 	/**

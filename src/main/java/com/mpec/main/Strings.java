@@ -26,6 +26,7 @@ public class Strings {
 	public static String FILLALLFIELDS;
 	public static String USERNAMEEXISTS;
 	public static String MAILEXISTS;
+	public static String NEWUSERADDED;
 
 	/**
 	 * Menús
@@ -111,6 +112,15 @@ public class Strings {
 	public static String USERSNAV;
 	public static String SEARCHUSERNAV;
 	public static String NEWUSERNAV;
+	
+	/**
+	 * Config stage
+	 */
+	public static String THEMELABEL;
+	public static String DARKCHOICE;
+	public static String LIGHTCHOICE;
+	public static String NEWPASSWORDLABEL;
+	
 
 	static {
 		loadStrings();
@@ -137,6 +147,7 @@ public class Strings {
 			FILLALLFIELDS = "You must fill all fields!";
 			USERNAMEEXISTS = "The username you entered already exists!";
 			MAILEXISTS = "The E-Mail you entered already exists!";
+			NEWUSERADDED = "New user added to the system.";
 
 			APPLICATIONMENU = "Application";
 			DOCUMENTSMENU = "Documents";
@@ -206,6 +217,11 @@ public class Strings {
 			USERSNAV = "USERS";
 			SEARCHUSERNAV = "Search User";
 			NEWUSERNAV = "New User";
+			
+			THEMELABEL = "Choose a Theme";
+			DARKCHOICE = "Dark";
+			LIGHTCHOICE = "Light";
+			NEWPASSWORDLABEL = "New Password: ";
 
 		} else if (Constants.language.equalsIgnoreCase("español")) {
 
@@ -227,6 +243,7 @@ public class Strings {
 			FILLALLFIELDS = "Debes rellenar todos los campos!";
 			USERNAMEEXISTS = "El nombre de usuario introducido ya existe!";
 			MAILEXISTS = "El correo electrónico introducido ya existe!";
+			NEWUSERADDED = "Nuevo usuario añadido al sistema.";
 
 			APPLICATIONMENU = "Aplicación";
 			DOCUMENTSMENU = "Documentos";
@@ -297,6 +314,10 @@ public class Strings {
 			SEARCHUSERNAV = "Buscar Usuario";
 			NEWUSERNAV = "Nuevo Usuario";
 
+			THEMELABEL = "Escoge un tema:";
+			DARKCHOICE = "Oscuro";
+			LIGHTCHOICE = "Claro";
+			NEWPASSWORDLABEL = "Contraseña Nueva: ";
 		}
 	}
 }

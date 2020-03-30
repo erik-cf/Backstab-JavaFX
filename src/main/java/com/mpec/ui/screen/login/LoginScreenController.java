@@ -68,7 +68,7 @@ public class LoginScreenController implements Initializable {
 			// Action Listener del botón
 			loginButton.setOnAction(event -> {
 				
-				User enteredUser = GetTools.validateLogin(userTextField.getText(), HashTools.stringToMD5(passPasswordField.getText()));
+				User enteredUser = GetTools.validateLogin(userTextField.getText(), passPasswordField.getText());
 				if(enteredUser != null) {
 					
 					if(enteredUser.getRole() != 1) {

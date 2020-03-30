@@ -1,5 +1,8 @@
 package com.mpec.main;
 
+import java.io.IOException;
+
+import com.mpec.config.ConfigTools;
 import com.mpec.entities.User;
 import com.mpec.ui.custom.BaseStage;
 
@@ -44,6 +47,15 @@ public final class Constants {
 	public static final String MONGO_DATABASE = "Backstab";
 	
 	////////////////////////////////////////// APP Config //////////////////////////////////////////
-	public static String language = "spanish";
+	public static String language = getLanguage();
 	public static String mode = "light";
+	
+	public static String getLanguage() {
+		try {
+			return ConfigTools.readConfig(ConfigTools.LANGUAGE);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "english";
+	}
 }

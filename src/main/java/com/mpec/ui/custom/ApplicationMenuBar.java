@@ -28,6 +28,7 @@ public class ApplicationMenuBar extends MenuBar {
 	private MenuItem closeApp;
 	private MenuItem logoutApp;
 	private MenuItem viewConfig;
+	private MenuItem languageConfig;
 	private MenuItem newDocs;
 	private MenuItem searchDocs;
 	
@@ -54,11 +55,12 @@ public class ApplicationMenuBar extends MenuBar {
 		logoutApp = new MenuItem(Strings.LOGOUTMENUITEM);
 		closeApp = new MenuItem(Strings.EXITMENUITEM);
 		viewConfig = new MenuItem(Strings.CONFIGURATIONMENUITEM);
+		languageConfig = new MenuItem(Strings.LANGUAGEMENUITEM);
 		newDocs = new MenuItem(Strings.NEWMENUITEM);
 		searchDocs = new MenuItem(Strings.SEARCHMENUITEM);
 		
 		// Add MenuItems to Menu
-		app.getItems().addAll(logoutApp, closeApp);
+		app.getItems().addAll(languageConfig, logoutApp, closeApp);
 		view.getItems().add(viewConfig);
 		docs.getItems().addAll(newDocs, searchDocs);
 		
@@ -85,6 +87,11 @@ public class ApplicationMenuBar extends MenuBar {
 		// Cerramos la aplicación al clicar el MenuItem de closeApp.
 		closeApp.setOnAction(event -> {
 			System.exit(0);
+		});
+		
+		languageConfig.setOnAction(event -> {
+			SelectLanguageStage selectLanguage = new SelectLanguageStage(((BaseStage)root.getScene().getWindow()));
+			selectLanguage.show();
 		});
 	}
 

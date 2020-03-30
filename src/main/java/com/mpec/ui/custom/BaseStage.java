@@ -2,14 +2,17 @@ package com.mpec.ui.custom;
 
 import java.io.IOException;
 
+import com.mpec.config.ConfigTools;
 import com.mpec.entities.User;
 import com.mpec.main.Constants;
+import com.mpec.main.Strings;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -22,6 +25,12 @@ public class BaseStage extends Stage {
 	private VBox sideBar;
 	
 	public BaseStage(User loggedUser) {
+		try {
+			Constants.language = ConfigTools.readConfig(ConfigTools.LANGUAGE);
+			Strings.loadStrings();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
 		Constants.loggedUser = loggedUser;
 		this.setWidth(Constants.WINDOW_BASE_WIDTH);
 		this.setHeight(Constants.WINDOW_BASE_HEIGHT);
@@ -55,6 +64,13 @@ public class BaseStage extends Stage {
 	
 	public Parent getContentPane() {
 		return (Parent)appBorderPane.getCenter();
+	}
+	
+	public void rebootApp() {
+		new Alert(AlertType.INFORMATION, Strings.REBOOTAPP, ButtonType.CLOSE).showAndWait();
+		
+		new BaseStage(Constants.loggedUser).show();
+		this.close();
 	}
 	
 }

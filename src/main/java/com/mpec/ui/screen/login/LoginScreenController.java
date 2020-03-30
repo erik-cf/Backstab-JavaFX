@@ -72,7 +72,7 @@ public class LoginScreenController implements Initializable {
 				if(enteredUser != null) {
 					
 					if(enteredUser.getRole() != 1) {
-						new Alert(AlertType.ERROR, "You don't have permission to use this application!", ButtonType.CLOSE).showAndWait();
+						new Alert(AlertType.ERROR, Strings.NOPERMISSION, ButtonType.CLOSE).showAndWait();
 						return;
 					}
 					// Creamos el Base Stage
@@ -83,7 +83,7 @@ public class LoginScreenController implements Initializable {
 					// Cerramos esta ventana
 					((Stage)loginButton.getScene().getWindow()).close();
 				}else {
-					new Alert(AlertType.ERROR, "Invalid username or password!", ButtonType.CLOSE).showAndWait();
+					new Alert(AlertType.ERROR, Strings.INVALIDCREDENTIALS, ButtonType.CLOSE).showAndWait();
 				}
 			});
 

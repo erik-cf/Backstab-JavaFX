@@ -1,7 +1,7 @@
 package com.mpec.main;
 
 public class Strings {
-	
+
 	/**
 	 * Login
 	 */
@@ -11,16 +11,22 @@ public class Strings {
 	public static String PASSWORDLABEL;
 	public static String PASSWORDFIELD;
 	public static String LOGINBUTTON;
-	
 
 	/**
 	 * Alertas
 	 */
 	public static String NONETWORKALERT;
 	public static String NONETWORKTITLE;
+	public static String NOPERMISSION;
+	public static String INVALIDCREDENTIALS;
 	public static String NOTEMPTYCHOICEBOX;
 	public static String NOTEMPTYTEXTFIELD;
-	
+	public static String REBOOTAPP;
+	public static String ERRORENCRYPTING;
+	public static String FILLALLFIELDS;
+	public static String USERNAMEEXISTS;
+	public static String MAILEXISTS;
+
 	/**
 	 * Menús
 	 */
@@ -32,13 +38,14 @@ public class Strings {
 	public static String NEWMENUITEM;
 	public static String SEARCHMENUITEM;
 	public static String CONFIGURATIONMENUITEM;
-	
+	public static String LANGUAGEMENUITEM;
+
 	/**
 	 * Contenido
 	 */
 	// Edit Button
 	public static String EDITBUTTON;
-	
+
 	// Table characters
 	public static String COLUMNCHARNAME;
 	public static String COLUMNATTACK;
@@ -47,14 +54,14 @@ public class Strings {
 	public static String COLUMNMOVEMENTSPEED;
 	public static String COLUMNATTACKSPEED;
 	public static String COLUMNRANGE;
-	
+
 	// Table drops data
 	public static String COLUMNDROPNAME;
 	public static String COLUMNVALUE;
 	public static String COLUMNDURATION;
 	public static String COLUMNMINRANGE;
 	public static String COLUMNMAXRANGE;
-	
+
 	// Map screen
 	public static String PHASETIME;
 	public static String MINDROPTIME;
@@ -62,7 +69,7 @@ public class Strings {
 	public static String MONSTERSCOUNT;
 	public static String COLLISIONPROB;
 	public static String APPLYBUTTON;
-	
+
 	// GameStatistics
 	public static String GAMENAME;
 	public static String TOTALGAMES;
@@ -72,7 +79,7 @@ public class Strings {
 	public static String AVERAGEDMGRECEIVED;
 	public static String AVERAGEDROPSPICKED;
 	public static String REFRESHBUTTON;
-	
+
 	// UserSearch
 	public static String FIELDLABEL;
 	public static String NAMECHOICE;
@@ -81,7 +88,7 @@ public class Strings {
 	public static String MAILCHOICE;
 	public static String VALUELABEL;
 	public static String SEARCHBUTTON;
-	
+
 	// NewUser
 	public static String NAMELABEL;
 	public static String SURNAMELABEL;
@@ -90,7 +97,7 @@ public class Strings {
 	public static String ADMINCHOICE;
 	public static String NORMALCHOICE;
 	public static String SENDBUTTON;
-	
+
 	/**
 	 * Navigation bar
 	 */
@@ -104,23 +111,33 @@ public class Strings {
 	public static String USERSNAV;
 	public static String SEARCHUSERNAV;
 	public static String NEWUSERNAV;
-	
+
 	static {
-		
-		if(Constants.language.equals("english")){
-			
+		loadStrings();
+	}
+
+	public static void loadStrings() {
+		if (Constants.language.equalsIgnoreCase("english")) {
+
 			LOGINTITLE = "Backstab Administration Panel - Login";
 			USERNAMELABEL = "Username";
 			USERNAMEFIELD = "Username...";
 			PASSWORDLABEL = "Password";
 			PASSWORDFIELD = "Password...";
 			LOGINBUTTON = "LOGIN";
-			
+
 			NONETWORKALERT = "Your network is not available, you should check your network availability!";
 			NONETWORKTITLE = "Network unavailable!";
+			NOPERMISSION = "You don't have permission to use this application!";
+			INVALIDCREDENTIALS = "The username/password you entered is/are not valid!";
 			NOTEMPTYCHOICEBOX = "You must select one option from the list!";
 			NOTEMPTYTEXTFIELD = "You must fill the text field!";
-			
+			REBOOTAPP = "We must reboot the app to apply your changes.";
+			ERRORENCRYPTING = "We couldn't encrypt the E-Mail. User not inserted...";
+			FILLALLFIELDS = "You must fill all fields!";
+			USERNAMEEXISTS = "The username you entered already exists!";
+			MAILEXISTS = "The E-Mail you entered already exists!";
+
 			APPLICATIONMENU = "Application";
 			DOCUMENTSMENU = "Documents";
 			VIEWMENU = "View";
@@ -129,9 +146,10 @@ public class Strings {
 			SEARCHMENUITEM = "Search...";
 			NEWMENUITEM = "New...";
 			CONFIGURATIONMENUITEM = "Configuration";
-			
+			LANGUAGEMENUITEM = "Language";
+
 			EDITBUTTON = "EDIT";
-			
+
 			COLUMNCHARNAME = "Char Name";
 			COLUMNATTACK = "Attack";
 			COLUMNDEFENSE = "Defense";
@@ -139,20 +157,20 @@ public class Strings {
 			COLUMNMOVEMENTSPEED = "Movement Speed";
 			COLUMNATTACKSPEED = "Attack Speed";
 			COLUMNRANGE = "Range";
-			
+
 			COLUMNDROPNAME = "Drop Name";
 			COLUMNVALUE = "Value";
 			COLUMNDURATION = "Duration (Seconds)";
 			COLUMNMINRANGE = "Min Range";
 			COLUMNMAXRANGE = "Max Range";
-			
+
 			PHASETIME = "Phase Time";
 			MINDROPTIME = "Min Drop Time";
 			MAXDROPTIME = "Max Drop Time";
 			MONSTERSCOUNT = "Base Monsters Count";
 			COLLISIONPROB = "Collision Objects Probability";
 			APPLYBUTTON = "APPLY";
-			
+
 			GAMENAME = "Name:";
 			TOTALGAMES = "Total games:";
 			TOTALPLAYERS = "Total players:";
@@ -161,7 +179,7 @@ public class Strings {
 			AVERAGEDMGRECEIVED = "Average damage received:";
 			AVERAGEDROPSPICKED = "Average drops picked:";
 			REFRESHBUTTON = "Refresh";
-			
+
 			FIELDLABEL = "Select the Field";
 			NAMECHOICE = "Name";
 			SURNAMECHOICE = "Surname";
@@ -169,15 +187,15 @@ public class Strings {
 			MAILCHOICE = "E-Mail";
 			VALUELABEL = "Insert the Value";
 			SEARCHBUTTON = "SEARCH";
-			
+
 			NAMELABEL = "Name";
 			SURNAMELABEL = "Surname";
 			MAILLABEL = "E-Mail";
 			ROLELABEL = "Role";
 			ADMINCHOICE = "Administrator";
 			NORMALCHOICE = "Normal User";
-			SENDBUTTON = "ENVIAR";
-			
+			SENDBUTTON = "SEND";
+
 			EDITSTATSNAV = "EDIT STATS";
 			CHARACTERNAV = "Character";
 			ENEMYNAV = "Enemy";
@@ -188,21 +206,28 @@ public class Strings {
 			USERSNAV = "USERS";
 			SEARCHUSERNAV = "Search User";
 			NEWUSERNAV = "New User";
-			
-		}else if(Constants.language.equals("spanish")) {
-			
+
+		} else if (Constants.language.equalsIgnoreCase("español")) {
+
 			LOGINTITLE = "Administración de Backstab - Iniciar sesión";
 			USERNAMELABEL = "Nombre de usuario";
 			USERNAMEFIELD = "Nombre de usuario...";
 			PASSWORDLABEL = "Contraseña";
 			PASSWORDFIELD = "Contraseña...";
 			LOGINBUTTON = "Iniciar Sesión";
-			
+
 			NONETWORKALERT = "No hay conexión a Internet, deberías revisar tu conexión!";
 			NONETWORKTITLE = "Internet no disponible!";
+			NOPERMISSION = "No tienes permisos para usar esta aplicación!";
+			INVALIDCREDENTIALS = "El usuario/contraseña introducidos son incorrectos!";
 			NOTEMPTYCHOICEBOX = "Debes seleccionar un elemento de la lista!";
 			NOTEMPTYTEXTFIELD = "Debes rellenar el campo de texto!";
-			
+			REBOOTAPP = "Debemos reiniciar la aplicación para aplicar los cambios.";
+			ERRORENCRYPTING = "No hemos podido encriptar el correo electrónico. El usuario no se ha creado...";
+			FILLALLFIELDS = "Debes rellenar todos los campos!";
+			USERNAMEEXISTS = "El nombre de usuario introducido ya existe!";
+			MAILEXISTS = "El correo electrónico introducido ya existe!";
+
 			APPLICATIONMENU = "Aplicación";
 			DOCUMENTSMENU = "Documentos";
 			VIEWMENU = "Ver";
@@ -211,9 +236,10 @@ public class Strings {
 			SEARCHMENUITEM = "Buscar...";
 			NEWMENUITEM = "Nuevo...";
 			CONFIGURATIONMENUITEM = "Configuración";
-			
+			LANGUAGEMENUITEM = "Idioma";
+
 			EDITBUTTON = "EDITAR";
-			
+
 			COLUMNCHARNAME = "Nombre Caracter";
 			COLUMNATTACK = "Ataque";
 			COLUMNDEFENSE = "Defensa";
@@ -221,20 +247,20 @@ public class Strings {
 			COLUMNMOVEMENTSPEED = "Velocidad de Movimiento";
 			COLUMNATTACKSPEED = "Velocidad de Ataque";
 			COLUMNRANGE = "Rango";
-			
+
 			COLUMNDROPNAME = "Nombre del Drop";
 			COLUMNVALUE = "Valor";
 			COLUMNDURATION = "Duración (Segundos)";
 			COLUMNMINRANGE = "Rango Mínimo";
 			COLUMNMAXRANGE = "Rango Máximo";
-			
+
 			PHASETIME = "Tiempo de Fase";
 			MINDROPTIME = "Tiempo Mínimo de Drop";
 			MAXDROPTIME = "Tiempo Máximo de Drop";
 			MONSTERSCOUNT = "Número Base de Monstruos";
 			COLLISIONPROB = "Probabilidad de Objetos de Colisión";
 			APPLYBUTTON = "Aplicar";
-			
+
 			GAMENAME = "Nombre:";
 			TOTALGAMES = "Juegos totales:";
 			TOTALPLAYERS = "Jugadores totales:";
@@ -243,7 +269,7 @@ public class Strings {
 			AVERAGEDMGRECEIVED = "Promedio de daño recibido:";
 			AVERAGEDROPSPICKED = "Promedio de drops recogidos:";
 			REFRESHBUTTON = "Actualizar";
-			
+
 			FIELDLABEL = "Selecciona el Campo";
 			NAMECHOICE = "Nombre";
 			SURNAMECHOICE = "Apellido";
@@ -251,7 +277,7 @@ public class Strings {
 			MAILCHOICE = "Correo Electrónico";
 			VALUELABEL = "Inserta el Valor";
 			SEARCHBUTTON = "BUSCAR";
-			
+
 			NAMELABEL = "Nombre";
 			SURNAMELABEL = "Apellido";
 			MAILLABEL = "Correo Electrónico";
@@ -259,7 +285,7 @@ public class Strings {
 			ADMINCHOICE = "Administrador";
 			NORMALCHOICE = "Usuario Normal";
 			SENDBUTTON = "ENVIAR";
-			
+
 			EDITSTATSNAV = "EDITAR";
 			CHARACTERNAV = "Caracter";
 			ENEMYNAV = "Enemigo";
@@ -270,8 +296,7 @@ public class Strings {
 			USERSNAV = "USUARIOS";
 			SEARCHUSERNAV = "Buscar Usuario";
 			NEWUSERNAV = "Nuevo Usuario";
-			
+
 		}
 	}
-	
 }

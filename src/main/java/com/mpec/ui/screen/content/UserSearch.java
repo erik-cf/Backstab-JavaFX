@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.mpec.main.Strings;
+import com.mpec.mongo.manager.GetTools;
+import com.mpec.ui.custom.BaseStage;
+import com.mpec.ui.custom.SearchUserResults;
+import com.mpec.encription.AsymmetricTools;
+import com.mpec.entities.User;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -71,7 +76,25 @@ public class UserSearch implements Initializable {
 				new Alert(AlertType.ERROR, Strings.NOTEMPTYTEXTFIELD, ButtonType.CLOSE).show();
 				return;
 			}
-			Stage searchResults;
+			ObservableList<User> data = null;
+			if(fieldChoiceBox.getSelectionModel().getSelectedItem().equals(Strings.NAMECHOICE)) {
+				data = GetTools.getUsersResult("name", valueTextField.getText());
+			}else if(fieldChoiceBox.getSelectionModel().getSelectedItem().equals(Strings.SURNAMECHOICE)) {
+				data = GetTools.getUsersResult("surname", valueTextField.getText());
+			}else if(fieldChoiceBox.getSelectionModel().getSelectedItem().equals(Strings.USERNAMECHOICE)) {
+				data = GetTools.getUsersResult("username", valueTextField.getText());
+			}else if(fieldChoiceBox.getSelectionModel().getSelectedItem().equals(Strings.MAILCHOICE)) {
+				try {
+					data = GetTools.getUsersResult("mail", AsymmetricTools.encryptText(valueTextField.getText()));
+				} catch (Exception e) {
+					e.printStackTrace();
+				}			
+			}else {
+				new Alert(AlertType.ERROR, "Unknown Error...", ButtonType.CLOSE).show();
+				return;
+			}
+			SearchUserResults searchResults = new SearchUserResults(((BaseStage)searchButton.getScene().getWindow()), data);
+			searchResults.show();
 		});
 	}
 }

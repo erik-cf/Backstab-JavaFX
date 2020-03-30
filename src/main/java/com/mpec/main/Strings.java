@@ -18,6 +18,8 @@ public class Strings {
 	 */
 	public static String NONETWORKALERT;
 	public static String NONETWORKTITLE;
+	public static String NOTEMPTYCHOICEBOX;
+	public static String NOTEMPTYTEXTFIELD;
 	
 	/**
 	 * Menús
@@ -34,6 +36,9 @@ public class Strings {
 	/**
 	 * Contenido
 	 */
+	// Edit Button
+	public static String EDITBUTTON;
+	
 	// Table characters
 	public static String COLUMNCHARNAME;
 	public static String COLUMNATTACK;
@@ -58,6 +63,34 @@ public class Strings {
 	public static String COLLISIONPROB;
 	public static String APPLYBUTTON;
 	
+	// GameStatistics
+	public static String GAMENAME;
+	public static String TOTALGAMES;
+	public static String TOTALPLAYERS;
+	public static String AVERAGETIME;
+	public static String AVERAGEDMGDEALT;
+	public static String AVERAGEDMGRECEIVED;
+	public static String AVERAGEDROPSPICKED;
+	public static String REFRESHBUTTON;
+	
+	// UserSearch
+	public static String FIELDLABEL;
+	public static String NAMECHOICE;
+	public static String SURNAMECHOICE;
+	public static String USERNAMECHOICE;
+	public static String MAILCHOICE;
+	public static String VALUELABEL;
+	public static String SEARCHBUTTON;
+	
+	// NewUser
+	public static String NAMELABEL;
+	public static String SURNAMELABEL;
+	public static String MAILLABEL;
+	public static String ROLELABEL;
+	public static String ADMINCHOICE;
+	public static String NORMALCHOICE;
+	public static String SENDBUTTON;
+	
 	/**
 	 * Navigation bar
 	 */
@@ -75,6 +108,7 @@ public class Strings {
 	static {
 		
 		if(Constants.language.equals("english")){
+			
 			LOGINTITLE = "Backstab Administration Panel - Login";
 			USERNAMELABEL = "Username";
 			USERNAMEFIELD = "Username...";
@@ -84,6 +118,8 @@ public class Strings {
 			
 			NONETWORKALERT = "Your network is not available, you should check your network availability!";
 			NONETWORKTITLE = "Network unavailable!";
+			NOTEMPTYCHOICEBOX = "You must select one option from the list!";
+			NOTEMPTYTEXTFIELD = "You must fill the text field!";
 			
 			APPLICATIONMENU = "Application";
 			DOCUMENTSMENU = "Documents";
@@ -93,6 +129,8 @@ public class Strings {
 			SEARCHMENUITEM = "Search...";
 			NEWMENUITEM = "New...";
 			CONFIGURATIONMENUITEM = "Configuration";
+			
+			EDITBUTTON = "EDIT";
 			
 			COLUMNCHARNAME = "Char Name";
 			COLUMNATTACK = "Attack";
@@ -115,6 +153,31 @@ public class Strings {
 			COLLISIONPROB = "Collision Objects Probability";
 			APPLYBUTTON = "APPLY";
 			
+			GAMENAME = "Name:";
+			TOTALGAMES = "Total games:";
+			TOTALPLAYERS = "Total players:";
+			AVERAGETIME = "Average game time:";
+			AVERAGEDMGDEALT = "Average damage dealt:";
+			AVERAGEDMGRECEIVED = "Average damage received:";
+			AVERAGEDROPSPICKED = "Average drops picked:";
+			REFRESHBUTTON = "Refresh";
+			
+			FIELDLABEL = "Select the Field";
+			NAMECHOICE = "Name";
+			SURNAMECHOICE = "Surname";
+			USERNAMECHOICE = "Username";
+			MAILCHOICE = "E-Mail";
+			VALUELABEL = "Insert the Value";
+			SEARCHBUTTON = "SEARCH";
+			
+			NAMELABEL = "Name";
+			SURNAMELABEL = "Surname";
+			MAILLABEL = "E-Mail";
+			ROLELABEL = "Role";
+			ADMINCHOICE = "Administrator";
+			NORMALCHOICE = "Normal User";
+			SENDBUTTON = "ENVIAR";
+			
 			EDITSTATSNAV = "EDIT STATS";
 			CHARACTERNAV = "Character";
 			ENEMYNAV = "Enemy";
@@ -127,6 +190,7 @@ public class Strings {
 			NEWUSERNAV = "New User";
 			
 		}else if(Constants.language.equals("spanish")) {
+			
 			LOGINTITLE = "Administración de Backstab - Iniciar sesión";
 			USERNAMELABEL = "Nombre de usuario";
 			USERNAMEFIELD = "Nombre de usuario...";
@@ -136,6 +200,8 @@ public class Strings {
 			
 			NONETWORKALERT = "No hay conexión a Internet, deberías revisar tu conexión!";
 			NONETWORKTITLE = "Internet no disponible!";
+			NOTEMPTYCHOICEBOX = "Debes seleccionar un elemento de la lista!";
+			NOTEMPTYTEXTFIELD = "Debes rellenar el campo de texto!";
 			
 			APPLICATIONMENU = "Aplicación";
 			DOCUMENTSMENU = "Documentos";
@@ -145,6 +211,8 @@ public class Strings {
 			SEARCHMENUITEM = "Buscar...";
 			NEWMENUITEM = "Nuevo...";
 			CONFIGURATIONMENUITEM = "Configuración";
+			
+			EDITBUTTON = "EDITAR";
 			
 			COLUMNCHARNAME = "Nombre Caracter";
 			COLUMNATTACK = "Ataque";
@@ -167,6 +235,31 @@ public class Strings {
 			COLLISIONPROB = "Probabilidad de Objetos de Colisión";
 			APPLYBUTTON = "Aplicar";
 			
+			GAMENAME = "Nombre:";
+			TOTALGAMES = "Juegos totales:";
+			TOTALPLAYERS = "Jugadores totales:";
+			AVERAGETIME = "Promedio de tiempo de juego:";
+			AVERAGEDMGDEALT = "Promedio de daño hecho:";
+			AVERAGEDMGRECEIVED = "Promedio de daño recibido:";
+			AVERAGEDROPSPICKED = "Promedio de drops recogidos:";
+			REFRESHBUTTON = "Actualizar";
+			
+			FIELDLABEL = "Selecciona el Campo";
+			NAMECHOICE = "Nombre";
+			SURNAMECHOICE = "Apellido";
+			USERNAMECHOICE = "Nombre de usuario";
+			MAILCHOICE = "Correo Electrónico";
+			VALUELABEL = "Inserta el Valor";
+			SEARCHBUTTON = "BUSCAR";
+			
+			NAMELABEL = "Nombre";
+			SURNAMELABEL = "Apellido";
+			MAILLABEL = "Correo Electrónico";
+			ROLELABEL = "Rol";
+			ADMINCHOICE = "Administrador";
+			NORMALCHOICE = "Usuario Normal";
+			SENDBUTTON = "ENVIAR";
+			
 			EDITSTATSNAV = "EDITAR";
 			CHARACTERNAV = "Caracter";
 			ENEMYNAV = "Enemigo";
@@ -177,6 +270,7 @@ public class Strings {
 			USERSNAV = "USUARIOS";
 			SEARCHUSERNAV = "Buscar Usuario";
 			NEWUSERNAV = "Nuevo Usuario";
+			
 		}
 	}
 	

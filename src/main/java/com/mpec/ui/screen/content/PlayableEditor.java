@@ -5,6 +5,7 @@ import java.util.ResourceBundle;
 
 import com.mpec.entities.Playable;
 import com.mpec.main.Constants;
+import com.mpec.main.Strings;
 import com.mpec.mongo.manager.GetTools;
 import com.mpec.ui.tools.TableTools;
 
@@ -48,6 +49,7 @@ public class PlayableEditor implements Initializable {
 	
 	public void fillTableView() {
 		Platform.runLater(() -> {
+			editButton.setText(Strings.EDITBUTTON);
 			tableData = GetTools.getCharacter(Constants.MAIN_CHARACTER, Playable.class);
 			playableTable.setItems(tableData);
 		});

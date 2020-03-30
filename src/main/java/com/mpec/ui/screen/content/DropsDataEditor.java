@@ -4,6 +4,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.mpec.entities.DropsData;
+import com.mpec.main.Strings;
 import com.mpec.mongo.manager.GetTools;
 import com.mpec.ui.tools.TableTools;
 
@@ -40,6 +41,7 @@ public class DropsDataEditor implements Initializable{
 	
 	public void fillTableView() {
 		Platform.runLater(() -> {
+			editButton.setText(Strings.EDITBUTTON);
 			tableData = GetTools.getDropsData();
 			dropsDataTable.setItems(tableData);
 		});

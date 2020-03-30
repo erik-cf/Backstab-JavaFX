@@ -113,7 +113,11 @@ public class NavBar implements Initializable {
 		});
 		gameStatistics.setOnMouseClicked(event -> {
 			Constants.selectedLabel = gameStatistics;
-			// TODO add game statistics scene
+			try {
+				stage.changeContentScene(FXMLLoader.load(getClass().getResource("../../fxml/app/GameStatistics.fxml")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
 		
 		userSearch.setOnMouseEntered(event -> {
@@ -121,7 +125,11 @@ public class NavBar implements Initializable {
 		});
 		userSearch.setOnMouseClicked(event -> {
 			Constants.selectedLabel = userSearch;
-			// TODO add user search scene
+			try {
+				stage.changeContentScene(FXMLLoader.load(getClass().getResource("../../fxml/app/UserSearch.fxml")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
 		
 		newUser.setOnMouseEntered(event -> {
@@ -129,7 +137,11 @@ public class NavBar implements Initializable {
 		});
 		newUser.setOnMouseClicked(event -> {
 			Constants.selectedLabel = newUser;
-			// TODO add new User scene
+			try {
+				stage.changeContentScene(FXMLLoader.load(getClass().getResource("../../fxml/app/NewUser.fxml")));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		});
 	}
 	

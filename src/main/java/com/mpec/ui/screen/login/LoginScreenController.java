@@ -3,7 +3,6 @@ package com.mpec.ui.screen.login;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.mpec.encription.HashTools;
 import com.mpec.entities.User;
 import com.mpec.main.Strings;
 import com.mpec.mongo.manager.GetTools;

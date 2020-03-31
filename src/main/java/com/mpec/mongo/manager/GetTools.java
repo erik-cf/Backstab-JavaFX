@@ -10,6 +10,7 @@ import org.bson.conversions.Bson;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoIterable;
 import com.mongodb.client.model.Filters;
 import com.mpec.encription.AsymmetricTools;
 import com.mpec.encription.HashTools;
@@ -117,6 +118,16 @@ public class GetTools extends MongoConnection {
 			}
 		}
 		return FXCollections.observableArrayList(usersAL);
+	}
+	
+	public static ArrayList<String> listCollections(){
+		ArrayList<String> result = new ArrayList<String>();
+		MongoIterable<String> list = getDatabase().listCollectionNames();
+		Iterator<String> it = list.iterator();
+		while(it.hasNext()) {
+			result.add(it.next());
+		}
+		return result;
 	}
 
 }

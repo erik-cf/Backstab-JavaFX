@@ -30,6 +30,7 @@ public class ApplicationMenuBar extends MenuBar {
 	private MenuItem viewConfig;
 	private MenuItem languageConfig;
 	private MenuItem newCols;
+	private MenuItem viewCols;
 	
 	/**
 	 * BorderPane that contains the MenuBar
@@ -59,11 +60,12 @@ public class ApplicationMenuBar extends MenuBar {
 		viewConfig = new MenuItem(Strings.CONFIGURATIONMENUITEM);
 		languageConfig = new MenuItem(Strings.LANGUAGEMENUITEM);
 		newCols = new MenuItem(Strings.NEWMENUITEM);
+		viewCols = new MenuItem(Strings.VIEWEDITCOLS);
 		
 		// Add MenuItems to Menu
 		app.getItems().addAll(languageConfig, logoutApp, closeApp);
 		view.getItems().add(viewConfig);
-		cols.getItems().addAll(newCols);
+		cols.getItems().addAll(newCols, viewCols);
 		
 		// Add Menus to MenuBar
 		this.getMenus().addAll(app, cols, view);
@@ -103,6 +105,11 @@ public class ApplicationMenuBar extends MenuBar {
 		newCols.setOnAction(event -> {
 			NewCollectionStage newColStage = new NewCollectionStage((BaseStage)this.root.getScene().getWindow());
 			newColStage.show();
+		});
+		
+		viewCols.setOnAction(event -> {
+			SeeCollectionsStage seeColsStage = new SeeCollectionsStage((BaseStage)this.root.getScene().getWindow());
+			seeColsStage.show();
 		});
 		
 		

@@ -30,8 +30,14 @@ public class PostTools extends MongoConnection{
 		getMongoCollection(Constants.USER).insertOne(docToInsert);
 	}
 	
-	public static void createCollection(String collectionName) {
-		getDatabase().createCollection(collectionName);
+	public static boolean createCollection(String collectionName) {
+		if(getMongoCollection(collectionName) == null) {
+			getDatabase().createCollection(collectionName);
+			return true;
+		}else {
+			new Alert(AlertType.ERROR, Strings.COLLECTIONEXISTS, ButtonType.CLOSE).show();
+			return false;
+		}
 	}
 	
 }

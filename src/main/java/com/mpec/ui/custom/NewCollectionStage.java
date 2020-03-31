@@ -53,8 +53,9 @@ public class NewCollectionStage extends Stage{
 	private void setListeners() {
 		newButton.setOnAction(event -> {
 			if(!newTextField.getText().equals("")) {
-				PostTools.createCollection(newTextField.getText());
-				new Alert(AlertType.INFORMATION, Strings.COLLECTIONCREATED, ButtonType.OK).show();
+				if(PostTools.createCollection(newTextField.getText())) {
+					new Alert(AlertType.INFORMATION, Strings.COLLECTIONCREATED, ButtonType.OK).show();
+				}
 			}else {
 				new Alert(AlertType.ERROR, Strings.NOTEMPTYTEXTFIELD, ButtonType.CLOSE).show();
 			}

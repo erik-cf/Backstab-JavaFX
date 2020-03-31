@@ -36,11 +36,23 @@ public class MongoConnection {
 		 * @return La colección de tipo MongoCollection<Document>.
 		 */
 		public static MongoCollection<Document> getMongoCollection(String collection) {
-			return database.getCollection(collection);
+			if(collectionExists(collection)) {
+				return database.getCollection(collection);
+			}
+			return null;
 		}
 		
 		public static MongoDatabase getDatabase() {
 			return database;
+		}
+		
+		public static boolean collectionExists(String collectionName) {
+			for(String cols : database.listCollectionNames()) {
+				if(cols.equalsIgnoreCase(collectionName)) {
+					return true;
+				}
+			}
+			return false;
 		}
 		
 		

@@ -2,7 +2,6 @@ package com.mpec.ui.tools;
 
 import com.mpec.entities.DropsData;
 import com.mpec.entities.GameCharacter;
-import com.mpec.entities.Playable;
 import com.mpec.main.Strings;
 import com.mpec.mongo.manager.PutTools;
 

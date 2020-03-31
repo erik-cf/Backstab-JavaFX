@@ -31,7 +31,7 @@ public class Main extends Application {
 		new Thread(() -> {
 			MongoConnection.initialize();
 		}).start();
-
+		
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../ui/fxml/login/login_fxml.fxml"));
 			root.getStyleClass().add("loginroot");

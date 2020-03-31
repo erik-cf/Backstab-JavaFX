@@ -30,6 +30,9 @@ public class Strings {
 	public static String ONLYINTEGERS;
 	public static String CHANGESAPPLIED;
 	public static String COLLECTIONCREATED;
+	public static String COLLECTIONEXISTS;
+	public static String COLLECTIONDOESNTEXISTS;
+	public static String COLLECTIONRENAMED;
 
 	/**
 	 * Menús
@@ -43,6 +46,7 @@ public class Strings {
 	public static String SEARCHMENUITEM;
 	public static String CONFIGURATIONMENUITEM;
 	public static String LANGUAGEMENUITEM;
+	public static String VIEWEDITCOLS;
 
 	/**
 	 * Contenido
@@ -159,7 +163,10 @@ public class Strings {
 			ONLYINTEGERS = "Only Integers are allowed on the fields.";
 			CHANGESAPPLIED = "Changes applied successfully.";
 			COLLECTIONCREATED = "Collection created successfully.";
-
+			COLLECTIONEXISTS = "The name you provided for the collection already exists!";
+			COLLECTIONDOESNTEXISTS = "The collection doesn't exists!";
+			COLLECTIONRENAMED = "Collection renamed successfully.";
+			
 			APPLICATIONMENU = "Application";
 			DOCUMENTSMENU = "Collections";
 			VIEWMENU = "View";
@@ -169,6 +176,7 @@ public class Strings {
 			NEWMENUITEM = "New...";
 			CONFIGURATIONMENUITEM = "Configuration";
 			LANGUAGEMENUITEM = "Language";
+			VIEWEDITCOLS = "View/Edit collections";
 
 			EDITBUTTON = "EDIT";
 
@@ -260,6 +268,9 @@ public class Strings {
 			ONLYINTEGERS = "Solo se permiten números enteros en los campos.";
 			CHANGESAPPLIED = "Cambios insertados correctamente.";
 			COLLECTIONCREATED = "Colección creada con éxito.";
+			COLLECTIONEXISTS = "El nombre proporcionado para la nueva colección ya existe!";
+			COLLECTIONDOESNTEXISTS = "La colección no existe!";
+			COLLECTIONRENAMED = "Colección renombrada correctamente.";
 			 
 			APPLICATIONMENU = "Aplicación";
 			DOCUMENTSMENU = "Colecciones";
@@ -270,6 +281,7 @@ public class Strings {
 			NEWMENUITEM = "Nuevo...";
 			CONFIGURATIONMENUITEM = "Configuración";
 			LANGUAGEMENUITEM = "Idioma";
+			VIEWEDITCOLS = "Ver/Editar colecciones";
 
 			EDITBUTTON = "EDITAR";
 

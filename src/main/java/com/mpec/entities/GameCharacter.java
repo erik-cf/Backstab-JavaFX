@@ -2,6 +2,9 @@ package com.mpec.entities;
 
 public class GameCharacter {
 
+	public static final int PLAYABLE = 0x00001f;
+	public static final int ENEMY = 0x00002f;
+	
 	private String name;
 	private double attack;
 	private double defense;
@@ -9,9 +12,10 @@ public class GameCharacter {
 	private double movement_speed;
 	private double attack_speed;
 	private double range;
+	private int type;
 	
 	public GameCharacter(String name, double attack, double defense, double hp, double movement_speed, double attack_speed,
-			double range) {
+			double range, int type) {
 		super();
 		this.name = name;
 		this.attack = attack;
@@ -20,6 +24,7 @@ public class GameCharacter {
 		this.movement_speed = movement_speed;
 		this.attack_speed = attack_speed;
 		this.range = range;
+		this.type = type;
 	}
 
 	public String getName() {
@@ -76,5 +81,15 @@ public class GameCharacter {
 
 	public void setRange(double range) {
 		this.range = range;
+	}
+
+	public int getType() {
+		return type;
+	}
+
+	public void setType(int type) {
+		this.type = type;
 	}	
+	
+	
 }

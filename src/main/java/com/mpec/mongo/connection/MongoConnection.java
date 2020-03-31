@@ -39,6 +39,10 @@ public class MongoConnection {
 			return database.getCollection(collection);
 		}
 		
+		public static MongoDatabase getDatabase() {
+			return database;
+		}
+		
 		
 	
 }

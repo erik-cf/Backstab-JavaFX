@@ -4,7 +4,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.mpec.entities.DropsData;
-import com.mpec.main.Strings;
 import com.mpec.mongo.manager.GetTools;
 import com.mpec.ui.tools.TableTools;
 
@@ -12,7 +11,6 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 
 public class DropsDataEditor implements Initializable{
@@ -22,9 +20,6 @@ public class DropsDataEditor implements Initializable{
 	@FXML
 	TableView<DropsData> dropsDataTable;
 	
-	@FXML
-	Button editButton;
-	
 	/**
 	 * Lista de los datos de la tabla.
 	 */
@@ -33,6 +28,7 @@ public class DropsDataEditor implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Platform.runLater(() -> {
+			dropsDataTable.setEditable(true);
 			TableTools.addDropsDataColumns(dropsDataTable);
 			TableTools.setColumnsEqualWidth(dropsDataTable);
 			fillTableView();
@@ -41,7 +37,6 @@ public class DropsDataEditor implements Initializable{
 	
 	public void fillTableView() {
 		Platform.runLater(() -> {
-			editButton.setText(Strings.EDITBUTTON);
 			tableData = GetTools.getDropsData();
 			dropsDataTable.setItems(tableData);
 		});

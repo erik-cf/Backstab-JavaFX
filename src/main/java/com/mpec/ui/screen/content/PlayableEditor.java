@@ -5,7 +5,6 @@ import java.util.ResourceBundle;
 
 import com.mpec.entities.Playable;
 import com.mpec.main.Constants;
-import com.mpec.main.Strings;
 import com.mpec.mongo.manager.GetTools;
 import com.mpec.ui.tools.TableTools;
 
@@ -13,7 +12,6 @@ import javafx.application.Platform;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
 
 /**
@@ -30,9 +28,6 @@ public class PlayableEditor implements Initializable {
 	@FXML
 	TableView<Playable> playableTable;
 	
-	@FXML
-	Button editButton;
-	
 	/**
 	 * Lista de los datos de la tabla.
 	 */
@@ -41,6 +36,7 @@ public class PlayableEditor implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		Platform.runLater(() -> {
+			playableTable.setEditable(true);
 			TableTools.addGameCharacterColumns(playableTable);
 			TableTools.setColumnsEqualWidth(playableTable);
 			fillTableView();
@@ -49,7 +45,6 @@ public class PlayableEditor implements Initializable {
 	
 	public void fillTableView() {
 		Platform.runLater(() -> {
-			editButton.setText(Strings.EDITBUTTON);
 			tableData = GetTools.getCharacter(Constants.MAIN_CHARACTER, Playable.class);
 			playableTable.setItems(tableData);
 		});

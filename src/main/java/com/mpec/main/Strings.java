@@ -27,6 +27,9 @@ public class Strings {
 	public static String USERNAMEEXISTS;
 	public static String MAILEXISTS;
 	public static String NEWUSERADDED;
+	public static String ONLYINTEGERS;
+	public static String CHANGESAPPLIED;
+	public static String COLLECTIONCREATED;
 
 	/**
 	 * Menús
@@ -121,6 +124,11 @@ public class Strings {
 	public static String LIGHTCHOICE;
 	public static String NEWPASSWORDLABEL;
 	
+	/**
+	 * New Collection Stage
+	 */
+	public static String NEWCOLLECTION;
+	
 
 	static {
 		loadStrings();
@@ -148,9 +156,12 @@ public class Strings {
 			USERNAMEEXISTS = "The username you entered already exists!";
 			MAILEXISTS = "The E-Mail you entered already exists!";
 			NEWUSERADDED = "New user added to the system.";
+			ONLYINTEGERS = "Only Integers are allowed on the fields.";
+			CHANGESAPPLIED = "Changes applied successfully.";
+			COLLECTIONCREATED = "Collection created successfully.";
 
 			APPLICATIONMENU = "Application";
-			DOCUMENTSMENU = "Documents";
+			DOCUMENTSMENU = "Collections";
 			VIEWMENU = "View";
 			LOGOUTMENUITEM = "Logout";
 			EXITMENUITEM = "Exit";
@@ -222,6 +233,8 @@ public class Strings {
 			DARKCHOICE = "Dark";
 			LIGHTCHOICE = "Light";
 			NEWPASSWORDLABEL = "New Password: ";
+			
+			NEWCOLLECTION = "New collection: ";
 
 		} else if (Constants.language.equalsIgnoreCase("español")) {
 
@@ -244,9 +257,12 @@ public class Strings {
 			USERNAMEEXISTS = "El nombre de usuario introducido ya existe!";
 			MAILEXISTS = "El correo electrónico introducido ya existe!";
 			NEWUSERADDED = "Nuevo usuario añadido al sistema.";
-
+			ONLYINTEGERS = "Solo se permiten números enteros en los campos.";
+			CHANGESAPPLIED = "Cambios insertados correctamente.";
+			COLLECTIONCREATED = "Colección creada con éxito.";
+			 
 			APPLICATIONMENU = "Aplicación";
-			DOCUMENTSMENU = "Documentos";
+			DOCUMENTSMENU = "Colecciones";
 			VIEWMENU = "Ver";
 			LOGOUTMENUITEM = "Cerrar sesión";
 			EXITMENUITEM = "Salir";
@@ -318,6 +334,8 @@ public class Strings {
 			DARKCHOICE = "Oscuro";
 			LIGHTCHOICE = "Claro";
 			NEWPASSWORDLABEL = "Contraseña Nueva: ";
+			
+			NEWCOLLECTION = "Nueva Colección: ";
 		}
 	}
 }

@@ -19,7 +19,7 @@ public class ApplicationMenuBar extends MenuBar {
 	 * Menus.
 	 */
 	private Menu app;
-	private Menu docs;
+	private Menu cols;
 	private Menu view;
 	
 	/**
@@ -29,16 +29,13 @@ public class ApplicationMenuBar extends MenuBar {
 	private MenuItem logoutApp;
 	private MenuItem viewConfig;
 	private MenuItem languageConfig;
-	private MenuItem newDocs;
-	private MenuItem searchDocs;
+	private MenuItem newCols;
 	
 	/**
 	 * BorderPane that contains the MenuBar
 	 */
 	private BorderPane root;
-	
-	private BaseStage mainStage;
-	
+		
 	public ApplicationMenuBar(BorderPane root) {
 		super();
 		this.root = root;
@@ -53,7 +50,7 @@ public class ApplicationMenuBar extends MenuBar {
 	private void initialize() {
 		// Initialize menus
 		app = new Menu(Strings.APPLICATIONMENU);
-		docs = new Menu(Strings.DOCUMENTSMENU);
+		cols = new Menu(Strings.DOCUMENTSMENU);
 		view = new Menu(Strings.VIEWMENU);
 		
 		// Initialize MenuItems
@@ -61,16 +58,15 @@ public class ApplicationMenuBar extends MenuBar {
 		closeApp = new MenuItem(Strings.EXITMENUITEM);
 		viewConfig = new MenuItem(Strings.CONFIGURATIONMENUITEM);
 		languageConfig = new MenuItem(Strings.LANGUAGEMENUITEM);
-		newDocs = new MenuItem(Strings.NEWMENUITEM);
-		searchDocs = new MenuItem(Strings.SEARCHMENUITEM);
+		newCols = new MenuItem(Strings.NEWMENUITEM);
 		
 		// Add MenuItems to Menu
 		app.getItems().addAll(languageConfig, logoutApp, closeApp);
 		view.getItems().add(viewConfig);
-		docs.getItems().addAll(newDocs, searchDocs);
+		cols.getItems().addAll(newCols);
 		
 		// Add Menus to MenuBar
-		this.getMenus().addAll(app, docs, view);
+		this.getMenus().addAll(app, cols, view);
 	}
 	
 	private void setListeners() {
@@ -104,6 +100,11 @@ public class ApplicationMenuBar extends MenuBar {
 			confStage.show();
 		});
 		
+		newCols.setOnAction(event -> {
+			NewCollectionStage newColStage = new NewCollectionStage((BaseStage)this.root.getScene().getWindow());
+			newColStage.show();
+		});
+		
 		
 	}
 
@@ -112,11 +113,11 @@ public class ApplicationMenuBar extends MenuBar {
 	 * @return The app Menu.
 	 */
 	public Menu getApp() {
-		return docs;
+		return cols;
 	}
 
 	public void setApp(Menu app) {
-		this.docs = app;
+		this.cols = app;
 	}
 
 	public Menu getView() {

@@ -58,7 +58,11 @@ public class GetTools extends MongoConnection {
 		Document doc;
 		while(i.hasNext()) {
 			doc = i.next();
-			data.add((T)new GameCharacter(doc.getString("name"), doc.getDouble("attack"), doc.getDouble("defense"), doc.getDouble("hp"), doc.getDouble("movement_speed"), doc.getDouble("attack_speed"), doc.getDouble("range")));
+			if(collection.equals(Constants.ENEMY)) {
+				data.add((T)new GameCharacter(doc.getString("name"), doc.getDouble("attack"), doc.getDouble("defense"), doc.getDouble("hp"), doc.getDouble("movement_speed"), doc.getDouble("attack_speed"), doc.getDouble("range"), GameCharacter.ENEMY));
+			}else {
+				data.add((T)new GameCharacter(doc.getString("name"), doc.getDouble("attack"), doc.getDouble("defense"), doc.getDouble("hp"), doc.getDouble("movement_speed"), doc.getDouble("attack_speed"), doc.getDouble("range"), GameCharacter.PLAYABLE));
+			}
 		}
 		return FXCollections.observableArrayList(data);
 	}

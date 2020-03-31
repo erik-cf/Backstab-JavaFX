@@ -19,10 +19,9 @@ public class Main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
-		
+
 		if (!checkInternetConnection()) {
-			Alert a = new Alert(AlertType.ERROR,
-					Strings.NONETWORKALERT, ButtonType.CLOSE);
+			Alert a = new Alert(AlertType.ERROR, Strings.NONETWORKALERT, ButtonType.CLOSE);
 			a.setTitle(Strings.NONETWORKTITLE);
 
 			a.showAndWait();
@@ -35,7 +34,12 @@ public class Main extends Application {
 
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("../ui/fxml/login/login_fxml.fxml"));
+			root.getStyleClass().add("loginroot");
 			Scene scene = new Scene(root, 600, 400);
+			if (Constants.mode.equals("dark")) {
+				scene.getStylesheets()
+						.add(getClass().getResource("../ui/screen/login/LoginScreenDark.css").toExternalForm());
+			}
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (Exception e) {

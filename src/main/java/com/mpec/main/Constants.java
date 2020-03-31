@@ -52,7 +52,7 @@ public final class Constants {
 	
 	
 	public static String language = getLanguage();
-	public static String mode = "light";
+	public static String mode = getMode();
 	
 	public static String getLanguage() {
 		try {
@@ -61,6 +61,15 @@ public final class Constants {
 			e.printStackTrace();
 		}
 		return "english";
+	}
+	
+	public static String getMode() {
+		try {
+			return ConfigTools.readConfig(ConfigTools.MODE);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return "dark";
 	}
 	
 	public static void initializeProperties() {

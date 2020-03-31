@@ -9,6 +9,7 @@ import com.mpec.mongo.manager.PutTools;
 
 import javafx.collections.FXCollections;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -31,7 +32,10 @@ public class ConfigurationStage extends Stage {
 	
 	private Button applyButton; 
 	
+	private BaseStage mainStage; 
+	
 	public ConfigurationStage(BaseStage stage) {
+		mainStage = stage;
 		this.initModality(Modality.APPLICATION_MODAL);
 		this.initOwner(stage);
 		initialize();
@@ -54,10 +58,12 @@ public class ConfigurationStage extends Stage {
 	}
 	
 	private void modify() {
-		this.setWidth(600);
-		this.setHeight(800);
+		this.setWidth(300);
+		this.setHeight(320);
 		mainPanel.setSpacing(15);
 		mainPanel.setPadding(new Insets(20));
+		mainPanel.setFillWidth(false);
+		mainPanel.setAlignment(Pos.CENTER);
 		themeLabel.setFont(new Font("Arial", 20));
 		newPassword.setFont(new Font("Arial", 20));
 		
@@ -74,7 +80,11 @@ public class ConfigurationStage extends Stage {
 		applyButton.setOnAction(event -> {
 			if(!themeChoiceBox.getSelectionModel().isEmpty()) {
 				try {
-					ConfigTools.writeConfig("mode", themeChoiceBox.getSelectionModel().getSelectedItem());
+					if(themeChoiceBox.getSelectionModel().getSelectedItem().equals(Strings.DARKCHOICE))
+						ConfigTools.writeConfig("mode", "dark");
+					else
+						ConfigTools.writeConfig("mode", "light");
+					mainStage.rebootApp();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -83,6 +93,7 @@ public class ConfigurationStage extends Stage {
 			if(!newPasswordPassField.getText().equals("")) {
 				PutTools.changePassword(newPasswordPassField.getText());
 			}
+			this.close();
 		});
 	}
 	

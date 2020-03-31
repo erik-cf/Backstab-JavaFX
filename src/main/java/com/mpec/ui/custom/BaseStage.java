@@ -27,6 +27,7 @@ public class BaseStage extends Stage {
 	public BaseStage(User loggedUser) {
 		try {
 			Constants.language = ConfigTools.readConfig(ConfigTools.LANGUAGE);
+			Constants.mode = ConfigTools.readConfig(ConfigTools.MODE);
 			Strings.loadStrings();
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -51,7 +52,11 @@ public class BaseStage extends Stage {
 		appBorderPane = new ApplicationBorderPane(sideBar, content);
 		root.setCenter(appBorderPane);
 		root.setTop(menuBar);
-		this.setScene(new Scene(root));
+		root.getStyleClass().add("mainpane");
+		Scene mainScene = new Scene(root);
+		if(Constants.mode.equals("dark"))
+			mainScene.getStylesheets().add(getClass().getResource("BaseStageDark.css").toExternalForm());
+		this.setScene(mainScene);
 	}
 	
 	public void changeContentScene(Parent center) {
